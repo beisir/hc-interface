@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+// Object.getPrototypeOf([]) == Array.prototype
+console.log(Object.getPrototypeOf({}));
+console.log(Array.prototype)
+// typeof Math.LN2 === 'number';
+// typeof Infinity === 'number';
+// typeof NaN === 'number'; //尽管NaN是"Not-A-Number"的缩写
+//
+// // Strings
+// typeof "bla" === 'string';
+// typeof (typeof 1) === 'string'; //typeof总是返回一个字符串
+//
+// // Booleans
+// typeof true === 'boolean';
+//
+// // Symbols
+// typeof Symbol() === 'symbol';
+// typeof Symbol.iterator === 'symbol';
+//
+// // Undefined
+// typeof undefined === 'undefined';
+//
+// // null
+// typeof null === 'object';//从一开始出现JavaScript就是这样的
+//
+// // function
+// typeof function(){} === 'function';
+// typeof class C{} === 'function'
+//
+// // Objects
+// typeof {a:1} === 'object';
+//
+// // 下面的结果是什么？
+// typeof new Boolean(true) === 'object';
+// typeof new Number(1) === 'object';
+// typeof new String("abc") === 'object';
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<style>
+	#result li img{
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+</style>
+</head>
+<body>
+<form name="form1" id="form1">  
+    <p>name:<input type="text" name="name" ></p>  
+    <p>gender:<input type="radio" name="gender" value="1">male <input type="radio" name="gender" value="2">female</p>  
+    <p>photo:<input type="file" multiple name="photo" id="photo"  onchange="fsubmit.call(this)" ></p>  
+    <p></p>  
+</form>
+<a href="mailto:hsy7426@163.com">hsy7426@163.com</a>
+<ul id="result"></ul>
+
+<script src="https://style.org.hc360.cn/js/build/source/core/jquery.min.js"></script>
+<script>
+
+function fsubmit(){
+	var formdata = new FormData();
+	console.log(this.files)
+	formdata.append('num',1);
+	formdata.append('code','success');
+	formdata.append('status','y');
+	for (var i in this.files){
+		formdata.append('files',this.files[i])	
+	}
+	$.ajax({
+		url: '//10.158.33.180/upload/imgupload',
+	 	type: 'POST',  
+		data: formdata, 
+        cache: false, 
+        processData: false,  // formdata 必须有这两参数		
+        contentType: false,	 // formdata 必须有这两参数	
+		success: function (result){
+			render(result);
+		}/*,
+		complete : function(XMLHttpRequest,status){ //请求完成后最终执行参数
+			console.log(XMLHttpRequest,status)	
+			// if(status=='timeout'){//超时,status还有success,error等值的情况
+			// 	ajaxTimeoutTest.abort();
+			// 	alert("超时");
+			// }	
+		}	*/
+	})
+}
+function render(imglist){
+	console.log(imglist);
+	var eleString = ``;	
+	$.each(imglist.url, function (ind,item){
+		eleString += `<li><img src="${item}" /></li>`;
+	});
+	$('#result').html(eleString)
+}
+// console.log('http://10.158.33.180:3377/static/html/index.html'.exec(reg))
+</script>
+</body>
+</html>

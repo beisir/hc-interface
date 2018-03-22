@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="icon" sizes="32x32" href="http://10.158.33.180/static/img/fca8506908a11010e063703091000bbb.png">
+<style media="screen">
+    .container{
+        width: 100%;
+        height: 500px;
+        background: black;
+    }
+    #dialog{
+        transform: translate3d(-100%,-100%,0);
+        border-radius: 5px;
+        transition: transform .6s;
+    }
+    #dialog.show{
+        transform:translate3d(0,0,0);
+    }
+</style>
+</head>
+<body>
+<dialog id="dialog">
+  <h2>Dialog Title</h2>
+  <p>Dialog content and other stuff will go here</p>
+  <p>Dialog content and other stuff will go here</p>
+  <p>Dialog content and other stuff will go here</p>
+</dialog>
+
+
+<button type="button" name="button" id="show">显示</button>
+<button type="button" name="button" id="hide">隐藏</button>
+<div class="container">
+
+</div>
+<script type="text/javascript">
+    let dialog = document.querySelector('dialog'),
+        show = document.querySelector('#show'),
+        hide = document.querySelector('#hide');
+    show.addEventListener('click', function (){
+        dialog.showModal();
+        dialog.classList.add('show');
+    })
+    dialog.addEventListener('click', function (){
+        // var {contains,add,remove,toggle} = dialog.classList;
+        dialog.classList.toggle('show');
+        // console.log(contains('show'))
+        // if (contains('show')){
+        //     remove('show');
+        // } else {
+        //     add('show')
+        // }
+    })
+    dialog.addEventListener('webkitTransitionEnd', function (){
+        if (this.classList.contains('show')){
+            this.show();
+        } else {
+            this.close();
+        }
+    },false);
+// function GetData(url){
+//     return new Promise(function (resolve, reject){
+//         fetch(url).then(function (options){
+//             resolve(options.json());
+//         }).catch(function (err){
+//             reject(err);
+//         })
+//     });
+// }
+    // var form = new FormData();
+    //     form.append('a','bbbbbbbbbb');
+    //     form.append('c','csscssscss');
+    //     form.append('d','saasdxccxcxb');
+    // fetch('https://4098e4cf.ngrok.io/Postserver/postdata', {
+    //     method: 'POST',
+    //     headers: {
+    //         // "Accept": "application/x-www-form-urlencoded"
+    //         // multipart/form-data
+    //         // text/plain
+    //     },
+    //     body: form,
+    //     mode: 'cors'
+    // }).then(function (options){
+    //     options.json().then(function (res){
+    //         console.log(res)
+    //     });
+    // })
+let s = Symbol('hebei');
+
+console.log(s);
+</script>
+</body>
+</html>

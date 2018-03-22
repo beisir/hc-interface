@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style media="screen">
+    svg{
+        width: 400px;
+        height: 300px;
+        background: #eee;
+        border:solid #000 1px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -200px;
+        margin-top: -150px;
+    }
+</style>
+</head>
+<body>
+<!-- svg W3C标准： http://www.w3.org/TR/SVG11/ -->
+<!--
+    svg 使用方式
+    1：浏览器直接打开
+    2：在HTML中使用img标签引用
+    3：作为css背景
+-->
+<!--
+    基本图形
+    1:<rect> 矩形
+    2:<circle> 圆形
+    3:<ellipse> 椭圆
+    4:<line> 直线
+    5:<polyline> 6<polygone>
+    <path>：曲线
+    基本属性
+    1:fill 2:stroke 3:stroke-width 4:transform
+ -->
+
+
+<!-- <rect> 矩形
+    x：相当于left 值 指的图形边的位置
+    y: 相当于top 值 指的图形边的位置
+    width: 从x坐标开始计算长度，
+    height: 从y坐标开始计算高度
+    rx: 定义圆角
+    ry: 定义圆角
+-->
+<!-- <svg width="100" height="100">
+    <rect x="" y="" width="100" height="100" rx="20" ry=""></rect>
+</svg> -->
+
+<!-- <circle>   圆型
+    cx：坐标 相当于left 值 指的是圆心位置
+    cy: 坐标 相当于top 值 指的是圆心位置
+    r: 表示圆的半径
+ -->
+<!-- <svg width="500" height="500">
+    <circle cx="300" cy="300" r="50"></circle>
+</svg> -->
+
+<!-- <ellipse>   椭圆型
+    cx：坐标 相当于left 值 指的是圆心位置
+    cy: 坐标 相当于top 值 指的是圆心位置
+    rx: 表示圆的半径
+    ry: 表示圆的半径
+-->
+<!-- <svg width="500" height="500">
+    <ellipse cx="300" cy="300" rx="30" ry="40"></ellipse>
+</svg> -->
+
+<!-- <line> 直线
+    x1：第一个点的 x坐标点
+    y1: 第一个点的 y坐标点
+    x2: ...
+    y2: ...
+-->
+<!-- <svg width="500" height="500">
+    <line x1="30" y1="600" x2="250" y2="600" stroke="red" fill="red"></line>
+</svg> -->
+
+<!-- <polyline> 折线
+    points="x1 y1 x2 y2   ..."
+-->
+<!-- <svg width="500" height="500">
+    <polyline points="100 20 50 60 100 100 50 0 " stroke="red" fill="none"></polyline>
+</svg> -->
+
+<!-- <polygon> 多边形
+    points="x1 y1 x2 y2   ..."最后会把一个点和最后一个坐标点连接
+-->
+<!-- <svg width="500" height="500">
+    <polygon points="100 20 50 60 100 100 50 0 " stroke="red" fill="green" stroke-width="10"></polygon>
+</svg> -->
+
+<!-- 填充，描边和变换
+    fill: 填充的颜色
+    stroke：描边颜色
+    stroke-width：描边的粗细
+    transform：变形
+-->
+
+<!--
+    控制视窗 width,height
+
+    控制视野
+    viewBox:
+    preserveAspectRatio="xMidYMid meet"
+-->
+<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <rect x="10" y="10" width="100" height="100" fill="#ccc" rx="10" stroke-width="1" stroke="red"></rect>
+</svg> -->
+
+<!-- 图形分组
+    <g> 创建分组
+-->
+
+<!-- <svg xmlns="http://www.w3.org/2000/svg" >
+    <g x="100" y="100">
+        <rect width="50" height="50" x="100" y="100" fill="hsl(0,0,0)" opacity="0.5" stroke="#000" stroke-width="2"></rect>
+        <line x1="60" y1="60" x2="120" y2="120" stroke="#000"></line>
+    </g>
+</svg> -->
+
+
+<!--
+    颜色支持
+    RGB: rgb(214,32,0);
+    HSL: 格式：hsl(h：颜色,s%：饱和度,l%：亮度)
+
+    线性渐变
+    x1="" y1=""
+    x2="" y2=""
+    定义线性渐变的端点坐标
+-->
+
+
+<svg xmlns="http://www.w3.org/2000/svg">
+    <linearGradient x1="0" y1="0" x2="1" y2="1">
+
+
+    </linearGradient>
+</svg>
+<script type="text/javascript">
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    // svg javascript api
+    // 创建图形标签 document.createElementNS(ns,tagName);
+    // 添加图形 element.appendChild(childElement);
+    // 设置/获取属性 element.setAttribute(name,value)  element.getAttribute(name);
+
+
+    // var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    // svg.setAttribute('width','500px');
+    // svg.setAttribute('height','500px');
+    // document.body.appendChild(svg);
+    //
+    //
+    // var rect = document.createElementNS('http://www.w3.org/2000/svg','rect');
+    // rect.setAttribute('x',100);
+    // rect.setAttribute('y',100);
+    // rect.setAttribute('width',100);
+    // rect.setAttribute('height',100);
+    // rect.setAttribute('fill','red');
+    // rect.setAttribute('stroke','#000');
+    // rect.setAttribute('rx','10');
+    // rect.setAttribute('stroke-width',5);
+    // svg.appendChild(rect);
+    // console.log(rect);
+
+</script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+
+<style type="text/css">
+	html {
+		overflow: hidden;
+	}
+	body {
+		position: absolute;
+		margin: 0px;
+		padding: 0px;
+		background: #4f5a70;
+		width: 100%;
+		height: 100%;
+	}
+	a{ color: rgba(255, 255, 255, 0.6);outline: none;text-decoration: none;-webkit-transition: 0.2s;transition: 0.2s;}
+	a:hover,a:focus{color:#74777b;text-decoration: none;}
+	#screen {
+		position: absolute;
+		left: 10%;
+		top: 10%;
+		width: 80%;
+		height: 80%;
+		background: #3e495d;
+	}
+	#screen img {
+		position: absolute;
+		cursor: pointer;
+		visibility: hidden;
+		width: 0px;
+		height: 0px;
+	}
+	#screen .tvover {
+		border: solid #876;
+		opacity: 1;
+		filter: alpha(opacity=100);
+	}
+	#screen .tvout {
+		border: solid #fff;
+		opacity: 0.7;
+	}
+	#bankImages {
+		display: none;
+	}
+</style>
+
+</head>
+<body>
+
+<div id="screen">
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p></p>
+<p></p>
+</div>
+</div>
+<div id="bankImages">
+
+</div>
+
+<script src="js/3d-tv.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://style.org.hc360.com/js/build/source/core/jquery.min.js"></script>
+<script type="text/javascript">
+    $.ajax({
+        url: '//10.158.33.180/Getserver/getdata',
+        success: function (data){
+            createdImg(data.datalist);
+        }
+    })
+	/* ==== start script ==== */
+	// onresize = tv.resize;
+	// tv.init();
+
+function createdImg (datalist){
+    var domStr = '';
+    $.each(datalist, function (index,item){
+        domStr += `<img src="${item.src}" alt="${item.title}"/>`
+    });
+    $('#bankImages').html(domStr);
+
+    onresize = tv.resize;
+    tv.init();
+}
+
+
+</script>
+
+</body>
+</html>

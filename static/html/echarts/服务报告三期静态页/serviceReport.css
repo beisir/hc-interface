@@ -1,0 +1,188 @@
+@charset "GB2312";
+
+*{padding:0;margin:0;}
+ul,li{list-style:none;}
+a{text-decoration:none;}
+
+.rigBox_8{overflow:hidden;}
+.rigBox{position:relative;}
+.body_bj2{background:#ebedf3;font-family:"microsoft yahei";}
+
+.sTitle span{float:right !important;font-size:12px;margin-right:20px;}
+.sTitle span a{color:#476cba;}
+.sTitle span a:hover{color:#608ceb;}
+
+.rigBox_8{clear:both;margin:0 0 15px 0;}
+/* 帐户信息 */
+.actionBox{float:left;width:49.2%;height:300px;background:#fff;position:relative;}
+.actionBox h4,.ext_rbox h4{font:400 16px/55px "microsoft yahei";padding:0 20px;color:#333;}
+.actionBox .cMore{font-size:12px;color:#476cba;margin-left:10px;}
+.actionBox .cMore a{color:#476cba;}
+.actionBox .cMore a:hover{color:#608ceb;}
+.balanceInfo{clear:both;padding:0 20px;}
+.balanceInfo li{clear:both;line-height:36px;font-size:14px;color:#999;}
+.balanceInfo li b{font-size:22px;color:#333;font-weight:400;padding-right:5px;}
+.balanceInfo li span{margin-left:20px;font-size:12px;}
+.balanceInfo li a{width:60px;height:22px;line-height:22px;font-size:12px;text-align:center;color:#fff;background:#476cba;display:inline-block;}
+.actionBox .botTxt,.ext_rbox .botTxt{position:absolute;left:0;bottom:0;width:100%;height:40px;line-height:40px;text-align:center;background:#f7f7f7;font-size:12px;color:#666;}
+
+/* 推广关键词 */
+.ext_rbox{float:right;width:49.2%;height:300px;background:#fff;position:relative;}
+.ext_rcon{clear:both;padding:0 20px;}
+.ext_rcon li{clear:both;line-height:36px;font-size:14px;color:#999;}
+.ext_rcon li b{font-size:22px;color:#333;font-weight:400;padding-right:5px;}
+.ext_rcon li span{margin-left:20px;font-size:12px;}
+.ext_rcon li a.dBtn{width:70px;height:22px;line-height:22px;font-size:12px;background:#fd853e;text-align:center;color:#fff;display:inline-block;margin:0 5px;}
+.ext_rcon li a{color:#476cba;}
+
+/* 推广管理 */
+.tabTit{margin-left:0 !important;}
+.tabTit li{width:150px;}
+.tabconBox{clear:both;padding-bottom:30px;}
+.dataTxt2{clear:both;margin-top:28px;}
+.dataTxt2 dt{float:left;width:50%;font-size:14px;color:#333;text-indent:20px;}
+.dataTxt2 dd{float:right;width:49%;text-align:right;padding-right:1%;}
+.dataTxt2 dd a{width:80px;height:24px;font-size:14px;border:1px solid #eee;display:inline-block;text-align: center;line-height: 24px;color: #666;}
+.dataTxt2 dd a.on{border-color: #476cba;color: #476cba;}
+.charTxt{clear:both;font-size:12px;color:#333;padding:10px 20px;overflow:hidden;}
+.charTxt span{margin-right:40px;}
+.charTxt em{width:15px;height:15px;display:inline-block; vertical-align:middle;margin:-2px 5px 0 0;}
+.charTxt .c1{background:#75ade4;}
+.charTxt .c2{background:#fecb2f;}
+.charTxt .c3{background:#fc6621;}
+.columnarBox{clear:both;}
+.columnarLcon{float:left;width:48%;padding:15px 1%;text-align:center;}
+.columnarRcon{float:right;width:48%;padding:15px 1%;text-align:center;}
+.columnarBox img{width:100%;}
+.switchBox{clear:both;color:#333;font-size:14px;padding:15px 0 10px 20px;overflow:hidden;}
+.switchBox .tgClose{width:57px;height:22px;background:url(https://style.org.hc360.com/images/my/images/corcenter/p4p/serimg1.png) no-repeat 0 1px;display:inline-block;vertical-align:middle;margin-left:10px;}
+.switchBox .tgOpen{background-position:0 -40px;}
+.switchBox a{width:57px;height:22px;display:block;}
+.switchBox i{width:20px;height:20px;display:inline-block;background:url(https://style.org.hc360.com/images/my/images/corcenter/p4p/serimg1.png) no-repeat -124px 0; vertical-align:middle;margin:0 1px 0 15px;}
+.switchBox .stxt{color:#f6914e;}
+
+/* 全网定投 */
+.fullBox{padding:15px 20px;line-height:24px;}
+.fullBox dt{font-size:14px;color:#fd853e;}
+.fullBox dd{clear:both;font-size:12px;}
+.fullBox dd a{width:60px;height:22px;line-height:22px;font-size:12px;text-align:center;color:#fff;background:#476cba;display:inline-block;margin-left:10px;}
+.fullWordBox{clear:both;font-size:14px;color:#333;padding:0 20px 20px;}
+.fullWordBox dt{font-size:14px;font-weight:600;}
+.fullWordBox dd{clear:both;padding-top:10px;}
+.fullWordBox dd a{margin-right:25px;color:#333;}
+.fullWordBox dd a:hover{color:#608ceb;}
+.fullbmBox{clear:both;height:370px;background:url(https://style.org.hc360.com/images/my/images/corcenter/p4p/bidimg.jpg) no-repeat center top;text-align:center;margin:0 20px;}
+.fullbmBox .til{font-size:48px;color:#fff;line-height:80px;font-weight:bold;padding-top:50px;}
+.fullbmBox .txt1{font-size:16px;line-height:30px;color:#fff;}
+.fullbmBox .txt2{font-size:18px;color:#fff;padding-top:30px;}
+.fullbmBox .txt2 a{color:#fff;}
+.fullbmBox .txt2 a:hover{color:#CCC;}
+.fullbmBox .bmbtn{clear:both;margin-top:15px;}
+.fullbmBox .bmbtn a{width:180px;height:50px;font-size:24px;line-height:50px;color:#000;text-align:center;background:#e2e204;border-radius:10px;display:block;margin:0 auto;}
+.fullbmBox .bmbtn a:hover{background:#476cba}
+
+/* 增效商城 */
+.mallBox{clear:both;font-size:14px;color:#333;padding:20px;}
+.mallBox dt{font-size:14px;font-weight:600;}
+.mallBox dd{clear:both;padding-top:10px;}
+.mallBox dd a{margin-right:25px;color:#333;}
+.mallBox dd a:hover{color:#608ceb;}
+.mallJoin{clear:both;padding:0 20px;}
+.mallJoin a{width:100px;height:40px;line-height:40px;font-size:14px;color:#fff;background:#476cba;border-radius:5px;text-align:center;display:block;}
+/* 品牌飙升便捷操作 */
+.proSbox{height:225px;overflow:hidden;}
+.proSbox li{float:left;width:20%;text-align:center;}
+.proSbox li .iconBox{width:70px;height:50px;display:block;margin:0 auto 10px;background:url(https://style.org.hc360.com/images/my/images/corcenter/p4p/homeImg.png) no-repeat;}
+.proSbox li .p1{font-size:16px;color:#333;line-height:26px;display:block;}
+.proSbox li .p2{font-size:14px;color:#999;display:block;}
+.proSbox li .p1 a{color:#333;}
+.proSbox li .p2 a{color:#999;}
+.proSbox li a{text-decoration:none;display:block;width:180px;height:150px;margin:20px auto 0;padding-top:30px;}
+.proSbox li a:hover{background:#496cba;}
+.proSbox li a:hover .p1{color:#fff;}
+.proSbox li a:hover .p2{color:#cbdaf9;}
+.proSbox li .icon1{background-position:14px 0;}
+.proSbox li .icon2{background-position:-69px 0;}
+.proSbox li .icon3{background-position:-147px 0;}
+.proSbox li .icon4{background-position:-234px 0;}
+.proSbox li .icon5{background-position:-308px 0;}
+.proSbox li .icon6{background-position:-440px 0;}
+.proSbox li a:hover .icon1{background-position:14px -90px;}
+.proSbox li a:hover .icon2{background-position:-69px -90px;}
+.proSbox li a:hover .icon3{background-position:-147px -90px;}
+.proSbox li a:hover .icon4{background-position:-234px -90px;}
+.proSbox li a:hover .icon5{background-position:-308px -90px;}
+.proSbox li a:hover .icon6{background-position:-440px -90px;}
+
+/* 品牌推广 */
+.brandTab{clear:both;padding:20px 20px 10px;}
+.brandTab .title{font-size:14px;color:#333;padding-bottom:10px;font-weight:600;}
+.brandTab .title a.more{margin-left:20px;color:#476cba;font-weight:400;}
+.brandTab table{clear: both;width:100%;}
+.brandTab table th{color: #999;font-size: 14px;font-weight: normal;height: 50px;background: #f8f8f8;white-space: nowrap;}
+.brandTab table td{text-align: center;border-bottom: 1px solid #e9e9e9;vertical-align: middle;font-size: 14px;padding: 14px 0;}
+.brandTab table td a{color:#476cba;}
+.brandTab table td a:hover{text-decoration: underline;}
+
+/* 详细诊断 */
+.zdtit{background:#f0f2f8;font-size:18px;font-weight: normal;height:40px;line-height:40px;color:#666;}
+.reportTab_2{padding:10px 10px 40px;}
+.reportTab_2 table{width: 100%;font-size: 14px;}
+.reportTab_2 tbody td{border-top:1px solid #f5f2f2;color:#333;}
+.reportTab_2 th{background: #f8f8f8;height:55px;font-weight: normal;color:#333;}
+.reportTab_2 td{padding:14px 0;}
+.reportTab_2 a{color:#476cba;}
+.reportTab_2 .alreadyOpen{width:22px;height:22px;margin:0 auto;background:url(https://style.org.hc360.com/images/my/images/corcenter/p4p/serimg1.png) no-repeat -185px 0;display:inline-block;}
+.reportTab_2 .noOpen{width:22px;height:22px;margin:0 auto;background:url(https://style.org.hc360.com/images/my/images/corcenter/p4p/serimg1.png) no-repeat -261px 0;display:inline-block;}
+
+/* 投放样式 */
+.throwLcon{width:315px;height:500px;font-family:"microsoft yahei";border-right:1px solid #e5e5e5;margin-left:-1px;position:relative;}
+.throwLcon h4{font:400 16px/55px "microsoft yahei";color:#333;padding:0 0 0 20px;}
+.throwLcon .exImg{width:150px;height:150px;background:url(https://style.org.hc360.com/images/my/images/corcenter/p4p/serimg1.png) no-repeat -348px 0;display:block;margin:30px auto 20px;}
+.throwLcon p{text-align:center;color:#333;}
+.throwLcon .p1{font-size:16px;font-weight:600;padding-bottom:20px;}
+.throwLcon .p2{font-size:12px;line-height:24px;}
+.throwLcon .botTxt{position:absolute;left:0;bottom:0;width:100%;height:40px;line-height:40px;text-align:center;background:#f7f7f7;font-size:12px;color:#666;}
+.throwRcon{position:absolute;left:315px;top:40px;right: 0;}
+
+/* 轮播数据 */
+#big_shot {width:860px;height:430px;margin:0 auto;position:relative;overflow:hidden;}
+#tabIcon{display:none;}
+#big_shot ul {width:860px;margin:0 auto;position:relative;}
+#big_shot li{z-index:0;position:absolute;list-style-type:none;width:0px;height:0px;overflow:hidden;top:160px;cursor:pointer;list-style-image:none;left:3px;border:2px solid #e1e1e1;padding:10px 15px;border-radius:10px;background:#fff;}
+#big_shot li p{width:860px;height:100%;background:#fff;filter:alpha(opacity=70);opacity:0.7;position:absolute;z-index:1;top:0;left:0}
+#big_shot li .playBox{width:480px;height:370px;}
+#big_shot li .playBox h3{font:400 14px/30px "SimSun";color:#0000cc;padding-bottom:8px;}
+#big_shot li .playBox h3 span{border-bottom:1px solid #00c;}
+#big_shot li .playBox h3 em{color:#c00;font-style:normal;}
+#big_shot li .playBox h3 i{width:17px;height:15px;background:url(http://image.hc360.com/hc360/2012/images/topicon_120117.png) no-repeat -46px -17px;display:inline-block; vertical-align:middle;margin-top:-5px;}
+#big_shot li .playBox .playList_1{clear:both;border:1px solid #e1e1e1;padding:5px;line-height:30px;font:400 12px/32px "SimSun";}
+#big_shot li .playBox .playList_1 dt,#big_shot li .playBox .playList_2 dt{clear:both;color:#333;height:35px;overflow:hidden;}
+#big_shot li .playBox .playList_1 dt span,#big_shot li .playBox .playList_2 dt span{color:#0000cc;padding:0 5px;border-right:1px solid #ccc;}
+#big_shot li .playBox .playList_1 dt span:last-child,#big_shot li .playBox .playList_2 dt span:list-child{border-right:0;}
+#big_shot li .playBox .playList_1 dd,#big_shot li .playBox .playList_2 dd{clear:both;border-top:1px solid #f3f3f3;padding:0 20px 0 5px;overflow:hidden;}
+#big_shot li .playBox .playList_1 dd i{float:left;width:12px;height:12px;line-height:12px;background:#2c99ff;color:#fff;text-align:center;font-style:normal;display:inline-block;margin:11px 6px 0 0;vertical-align:middle;}
+#big_shot li .playBox .playList_1 dd .leftxt,#big_shot li .playBox .playList_2 dd .leftxt{float:left;width:205px;height:28px;color:#00c;overflow:hidden;}
+#big_shot li .playBox .playList_1 dd .setup{float:right;width:130px;color:#666;font-weight:600;}
+#big_shot li .playBox .playList_1 dd .setup em{color:#ff8a00;font-style:normal;}
+#big_shot li .playBox .playList_1 dd .more,#big_shot li .playBox .playList_2 dd .more{color:#0000cc;padding:3px 0 15px 15px;overflow:hidden;}
+#big_shot li .playBox .playList_2,#big_shot li .playBox .playList_3{clear:both;line-height:30px;font:400 12px/32px "SimSun";}
+#big_shot li .playBox .playList_2 dd i{float:left;width:12px;height:12px;line-height:12px;background:#a8c2f3;color:#fff;text-align:center;font-style:normal;display:inline-block;margin:11px 6px 0 0;vertical-align:middle;}
+#big_shot li .playBox .playList_2 dd i.n1{background:#f87777;}
+#big_shot li .playBox .playList_2 dd i.n2{background:#fd9393;}
+#big_shot li .playBox .playList_2 dd i.n3{background:#ffb1b1;}
+#big_shot li .playBox .playList_2 dd .setup{float:right;width:130px;color:#999;}
+#big_shot li .playBox .playList_2 dd .setup em{color:#ff6949;font-style:normal;}
+#big_shot li .playBox .playList_3{padding-right:10px;}
+#big_shot li .playBox .playList_3 dt{color:#333;line-height:24px;max-height:72px;overflow:hidden;}
+#big_shot li .playBox .playList_3 dt span{color:#666;}
+#big_shot li .playBox .playList_3 dt em{color:#c00;font-style:normal;}
+#big_shot li .playBox .playList_3 dd .website{color:#008000;max-width:320px !important;height:20px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;}
+#big_shot li .playBox .playList_3 .snapshot{color:#666;text-decoration:underline;margin-left:10px;}
+#big_shot li .playBox .moreBtn{width:150px;height:42px;font:400 16px/42px "microsoft yahei";color:#fff;background:#476cba;border-radius:10px;margin:25px auto 0;text-align:center;}
+#big_shot li a{display:block;text-decoration:none;color:#fff;}
+#big_shot .prev,#big_shot .next{position:absolute;width:35px;height:65px;top:170px;z-index:1009;cursor:pointer;display:block;background:url(https://style.org.hc360.com/images/my/images/corcenter/p4p/serimg1.png) no-repeat;filter:alpha(opacity=60);opacity:0.6;}
+#big_shot .prev:hover,#big_shot .next:hover{text-decoration:none;filter:alpha(opacity=100);opacity:1;}
+#big_shot .prev {left:0;background-position:0 -157px;}
+#big_shot .next {right:0;background-position:-79px -157px;}
+#box{height:430px;}

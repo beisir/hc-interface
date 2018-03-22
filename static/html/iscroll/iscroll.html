@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width">
+    <style media="screen">
+        html,body{
+            width: 100%;
+            height: 100%;
+
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .page{
+           height: 100%;
+           /* overflow-y: hidden; */
+           transition: transform .3s;
+        }
+        .uls li{
+            line-height: 30px;
+            border-bottom: 2px solid #000;
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+<div class="page" id="page">
+    <ul class="uls" id="uls"></ul>
+</div>
+<script type="text/javascript" src="./iscroll-probe.js"></script>
+<script type="text/javascript" src="./demoUtils.js"></script>
+
+<script type="text/javascript">
+    var liString = '';
+    for(var i=0;i<50;i++){
+        liString += `<li>this is ${i} 个</li>`;
+    }
+    document.querySelector('#uls').innerHTML = liString;
+    // var myIscroll = new IScroll('#page',{
+    // });
+    // myIscroll.on('scroll', function (){
+    //    console.log(this);
+    // });
+let startY,moveY,distance;
+let page = document.querySelector('#page');
+page.addEventListener('touchstart', function (e){
+    let eve = e.touches[0];
+    clientY = eve.clientY;
+})
+
+page.addEventListener('touchmove', function (e){
+    let eve = e.touches[0];
+    moveY = eve.clientY;
+    distance = moveY - clientY;
+    console.log(distance)
+    if (distance > 50 ){
+        distance = 30;
+    } else if (distance<=0){
+        distance = 0;
+    }
+    this.style.transform = `translate3d(0,${distance}px,0)`;
+});
+
+page.addEventListener('touchend',function (e){
+   if (distance >= 30 ){
+       window.location.reload();
+   } else {
+       this.style.transform = `translate3d(0,0,0)`;
+   }
+})
+
+
+</script>
+</body>
+</html>

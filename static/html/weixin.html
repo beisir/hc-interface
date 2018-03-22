@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript" src="https://style.org.hc360.cn/js/build/source/core/jquery.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script>
+
+
+$.getJSON("//madata.hc360.com/wxservice/v1/wx/share?callback=?",{
+	url: encodeURIComponent( 'https://b2b.hc360.com/h5/index.html?u=anfang01&t=3&d=1' ),
+	type: 2
+},function (result){	
+	WeixinShare(result);		
+})
+
+
+
+function WeixinShare({appid,noncestr,signature,timestamp}){
+	console.log(appid,noncestr,signature,timestamp)
+	var jsApiList = ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ'];
+	wx.config({
+    	debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+    	appId: appid, // 必填，公众号的唯一标识
+    	timestamp: timestamp, // 必填，生成签名的时间戳
+    	nonceStr: noncestr, // 必填，生成签名的随机串
+    	signature: signature,// 必填，签名，见附录1
+    	jsApiList: jsApiList // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+	});
+	wx.ready(function (){
+		var title = 'hellow word',
+		desc = '这是一个神奇的页面',
+		link = window.location.href,
+		imgUrl = 'https://8fb34f0a.ngrok.io/static/img/fca8506908a11010e063703091000bbb.png';
+		wx.onMenuShareTimeline({
+		    title: title, // 分享标题
+		    link: link, // 分享链接，该链接域名必须与当前企业的可信域名一致
+		    imgUrl: imgUrl, // 分享图标
+		    success: function () {
+		        console.log('分享成功')
+		    },
+		    cancel: function () {
+		        console.log('分享失败')
+		    }
+		});
+		wx.onMenuShareAppMessage({
+		    title: title, // 分享标题
+		    desc: '', // 分享描述
+		    link: link, // 分享链接，该链接域名必须与当前企业的可信域名一致
+		    imgUrl: imgUrl, // 分享图标
+		    success: function () {
+		        console.log('分享成功：onMenuShareAppMessage')
+		    },
+		    cancel: function () {
+		        console.log('分享失败')
+		    }
+		});
+		wx.onMenuShareQQ({
+		    title: title, // 分享标题
+		    desc: '', // 分享描述
+		    link: link, // 分享链接，该链接域名必须与当前企业的可信域名一致
+		    imgUrl: imgUrl, // 分享图标
+		    success: function () {
+		        console.log('onMenuShareQQ')
+		    },
+		    cancel: function () {
+		        console.log('分享失败')
+		    }
+		});
+	});
+}
+
+
+
+
+</script>
+</body>
+</html>

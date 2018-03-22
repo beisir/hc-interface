@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<!-- form标签提交表单可以使用 form标签的target属性值 和iframe的name属性取相同值起到不跳转页面提交方式 -->
+<div class="iframe-container">
+	<form enctype="multipart/form-data" action="https://10.158.33.180/upload/imgupload" method="POST" target="uploadImg">
+		<input type="file" name="imgs" />
+		<button type="submit">提交</button>
+	</form>
+	<iframe src="https://10.158.33.180/static/html/practice.html" id="iframes" name="uploadImg" frameborder="0" style="">
+        <!-- <script type="text/javascript">
+            console.log(document.body);
+        </script> -->
+    </iframe>
+</div>
+
+<script type="text/javascript" src="https://style.org.hc360.com/js/build/source/core/jquery.min.js"></script>
+<script type="text/javascript">
+	// $('#iframes').on('load', function (){
+	// 	console.log($('#iframes').html());
+	// });
+	// console.log($('#iframes').html());
+</script>
+</body>
+</html>

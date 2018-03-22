@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<script type="text/javascript" src="https://index.hc360.com/hcindex/js/echarts.min.js"></script>
+<body>
+
+<div id="main" style="width: 600px;height:400px;"></div>
+
+
+
+
+<script type="text/javascript">
+var myChart = echarts.init(document.getElementById('main'));
+let options = {
+    color: ['#73ace6','#fbcc33','#ff6600'],
+    title: {
+        text: '行业对比数据报告',
+        // subtext: '数据来自慧聪网'
+        left: '10%'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['总量:行业优质客户平均量', '数量：个人数据','差额：与同行的差量'],
+        top: '10%',
+        left: '10%'
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        top: '20%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value',
+        boundaryGap: [0, 0.01]
+    },
+    yAxis: {
+        type: 'category',
+        data: ['总点击量','总消耗']
+    },
+    series: [
+        {
+            name: '总量:行业优质客户平均量',
+            type: 'bar',
+            stack: '总消耗',
+            data: [18203, 23489, 29034]
+        },
+        {
+            name: '数量：个人数据',
+            stack: '总消耗',
+            type: 'bar',
+            data: [19325, 23438, 31000]
+        },
+        {
+            name: '差额：与同行的差量',
+            type: 'bar',
+            data: [19325, 23438,0]
+        }
+    ]
+};
+
+
+myChart.setOption(options);
+// var bar = true;
+// console.log(bar+ 0);
+// console.log(bar + 'xyz');
+// console.log(bar+ true)
+// console.log(bar + false)
+
+
+// 1
+// truexyz
+// 2
+// 1
+console.log(undefined == null);
+console.log(1 ==true);
+console.log(2 ==true);
+console.log(0 == false);
+console.log(0 == '');
+console.log(NaN == NaN);
+console.log([]===false);
+console.log([]== ![]);
+
+true
+true
+false
+true
+true
+false
+false
+true
+
+</script>
+
+  <!-- {"errno":0,"data":{"dataList":[{"name":"电销整体预估值","data":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"unit":"元","isShow":true},{"name":"电销新签预估值","data":[490000.0,612500.0,612500.0,490000.0,210000.0,490000.0,0.0,210000.0,490000.0,157500.0,472500.0,630000.0],"unit":"元","isShow":true},{"name":"电销增值预估值","data":[1680000.0,2100000.0,2100000.0,1680000.0,960000.0,1440000.0,0.0,960000.0,1440000.0,540000.0,1620000.0,2160000.0],"unit":"元","isShow":true},{"name":"电销整体实际值","data":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"unit":"元","isShow":true},{"name":"电销新签实际值","data":[327028.0,471008.0,640760.0,577340.0,24840.0,273216.0,0.0,204280.0,661700.0,78560.0,655884.0,639776.0],"unit":"元","isShow":true},{"name":"电销增值实际值","data":[1261888.0,2889327.0,2487028.0,2172376.0,138172.0,595690.0,8036.0,407142.0,1860824.0,193104.0,1921080.0,2780888.0],"unit":"元","isShow":true}],"time":["2018年01月02周","2018年01月03周","2018年01月04周","2018年01月05周","2018年02月01周","2018年02月02周","2018年02月03周","2018年02月04周","2018年02月05周","2018年03月01周","2018年03月02周","2018年03月03周"]}} -->
+</body>
+</html>

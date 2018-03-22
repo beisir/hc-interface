@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>xxxx</title>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+
+<div id="tab">
+    <ul>
+        <li><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=635507636,3267756732&fm=27&gp=0.jpg" alt=""></li>
+        <li><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3310078993,81757306&fm=27&gp=0.jpg" alt=""></li></li>
+
+    </ul>
+</div>
+
+<!-- <button type="button" name="button" id="btn">图像按钮</button> -->
+<script src="https://style.org.hc360.cn/js/build/source/core/jquery.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript">
+
+
+
+
+weixinSh()
+function newfn (wx){
+    $('#btn').on('click',function (){
+        alert(wx);
+        wx.chooseImage({
+            count: 1, // 默认9
+            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+            success: function (res) {
+                var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                console.log(res);
+            }
+        });
+    })
+
+
+}
+function weixinSh(){
+    var jsApiList = ['onMenuShareTimeline','onMenuShareAppMessage'];
+    $.ajax({
+        url:"//madata.hc360.com/wxservice/v1/wx/share?url="+ encodeURIComponent( 'https://b2b.hc360.com/h5/index.html?u=anfang01&t=1&d=1' ) +"&type=2", // type=3 测试
+        dataType: "jsonp",
+        success:function(result){
+            var appId = result.appid;
+                timestamp = result.timestamp;
+                signature = result.signature;
+                nonceStr = result.noncestr;
+            wx.config({
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: appId, // 必填，公众号的唯一标识
+                timestamp: timestamp, //
+                nonceStr: nonceStr, // 必填，生成签名的随机串
+                signature: signature,// 必填，签名，见附录1
+                jsApiList: jsApiList // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            });
+            wx.ready(function(){
+                newfn(wx);
+                // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+                var title = document.title,
+                    proto = 'https://b2b.hc360.com/h5/index.html?u=anfang01&t=1&d=1',
+                    imgUrl = 'https://b2b.hc360.com/h5/wj_41.jpg',
+                    desc = '公司名片\n（由慧聪网微名片服务创建）';
+                if (searchHref.indexOf('&others=others') !== -1){
+                    searchHref = searchHref.replace('&others=others','');
+                };
+                wx.onMenuShareTimeline({
+                    title: title, // 分享标题
+                    link: searchHref + '&share=share', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl: imgUrl, // 分享图标
+                    success: function () {/*shareSuccess();// console.log('分享成功')*/},
+                    cancel: function () {/*/ 用户取消分享后执行的回调函数// console.log('sss')*/}
+                });
+                wx.onMenuShareAppMessage({
+                    title: title, // 分享标题
+                    link: searchHref + '&share=share', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl: imgUrl, // 分享图标
+                    desc: desc, // 分享描述
+                    success: function () {  /*/ 用户确认分享后执行的回调函数 // shareSuccess();*/},
+                    cancel: function () {  /*/ 用户取消分享后执行的回调函数 // console.log('aaaa')*/ }
+                });
+            });
+        }
+    });
+};
+
+
+
+
+</script>
+</body>
+</html>

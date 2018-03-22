@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <meta name="viewport" content="width=device-width">
+<style media="screen">
+    #uls {
+        width: 100vw;
+        height: 40vw;
+        overflow: scroll-y;
+        padding: 0 10px;
+    }
+    #uls li{
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 50vw;
+        padding: 5px 0;
+    }
+    #uls li.left{
+        float: left;
+    }
+
+    #uls li.right{
+        float: right;
+    }
+
+</style>
+</head>
+<body>
+<input type="text" id="socketId">
+<ul id="uls"></ul>
+<script type="text/javascript" src="https://style.org.hc360.cn/js/build/source/core/jquery.min.js"></script>
+<script type="text/javascript">
+
+var socket = new WebSocket('ws://10.158.33.180');
+    socket.onopen = function () {
+		socket.send('{"msg":"代开页面","type":"open"}');
+	};
+	socket.onmessage = function (e) {  // 一个用于消息事件的事件监听器，这一事件当有消息到达的时候该事件会触发。这个Listener会被传入一个名为"message"的 MessageEvent 对象。
+        leavMsg(JSON.parse(e.data));
+	};
+
+    // socket.onclose = function (e){   // 用于监听连接关闭事件监听器。当 WebSocket 对象的readyState 状态变为 CLOSED 时会触发该事件。这个监听器会接收一个叫close的 CloseEvent 对象。
+    //     console.log(e,'关闭socket连接');
+    // }
+    // socket.onerror = function (e){ // 当错误发生时用于监听error事件的事件监听器。会接受一个名为“error”的event对象。
+    //     console.log(e,'有错误事件');
+    // }
+    let val = '';
+    $('#socketId').on('keyup', function (e){
+        var keycode = e.keyCode;
+        if (keycode === 13){
+            val = $(this).val();
+            socket.send(`{"msg":"${val}","type":"msg"}`);
+            $(this).val('');
+        }
+    })
+
+
+    function leavMsg(options){
+        console.log(options)
+        var dome = $(`<li>${options.id}  说:  ${options.msg}</li>`)
+        if (options.type === 'open'){
+            dome.css({margin:'0 auto'})
+        } else {
+            if (val && options.msg === val){
+                dome.css({'float':'right'});
+            } else {
+                dome.css({'float':'left'});
+            }
+        }
+            dome.appendTo('#uls');
+    }
+</script>
+</body>
+</html>
