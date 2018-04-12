@@ -11,13 +11,21 @@ let getdata = require('../routes/getdata.js');
 let postdata = require('../routes/postdata.js');
 let upload = require('../routes/upload.js');
 let getweixin = require('../routes/getweixin.js');
-
+let axiosData = require('../routes/axiosData.js');
 let WebSocket = require('ws');
 
 let socket = require('../socket/index.js');
 module.exports = function (app, server){
-	app.use((req, res, next) => {
-	    res.header('Access-Control-Allow-Origin', '*');
+	app.all('*',(req, res, next) => {
+        console.log(req.headers.origin)
+	    res.header('Access-Control-Allow-Origin', req.headers.origin);
+        res.header('Access-Control-Allow-Headers', "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, Access-Control-Allow-Origin");
+        res.header('Access-Control-Allow-Mothods', "PUT, POST, GET, DELETE, OPTIONS");
+        res.header('Access-Control-Allow-Credentials', 'true');
+        // res.header('Access-Control-Allow-Origin', 'http://localhost:63342');
+        // res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+        // res.header('Access-Control-Allow-Headers', 'Content-Type');
+        // res.header('Access-Control-Allow-Credentials','true');
     	next();
 	});
 	app.use(cookieParser('hello'));  	// 设置加密
@@ -35,7 +43,7 @@ module.exports = function (app, server){
     app.use('/Getserver', getdata);
 	app.use('/Weixinserver', getweixin);
 	app.use('/Postserver', postdata);
-    // app.use('/json', Getjson);
+    app.use('/json', Getjson);
 	app.use('/jsonp', Getjsonp);
 
     app.use('/upload', upload);
@@ -43,4 +51,5 @@ module.exports = function (app, server){
     var wss = new WebSocket.Server({server});
     require('../socket/index.js')(wss);
 	app.use('/socket', socket);
+    app.use('/axiosData', axiosData);
 }

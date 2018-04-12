@@ -16,7 +16,7 @@ router.post('/imgupload' ,function (req,res,next){
 	});
     console.log(req.files);
 	Promise.all(resultArr).then(function (optionsList){
-		res.send({
+		res.jsonp({
 			'errno':0,
 			'msg':'success 上传成功',
 			'url': optionsList
@@ -53,6 +53,9 @@ function sendImgs(fileData){
 	});
 	return promise;
 }
-
+router.get('/mp3', function (req, res){
+    console.log(123456465789);
+    // console.log(res.files)
+})
 
 module.exports = router;

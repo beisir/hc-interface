@@ -1,109 +1,90 @@
 {
-  "errno": 0,
-  "data": [{
-    "dataList": [{
-        "name": "总量:行业优质客户平均量",
-        "type": "bar",
-        "data": [50, 10]
-      },
-      {
-        "name": "数量：个人数据",
-        "stack": "总点击量",
-        "type": "bar",
-        "data": [100, 21]
-      },
-      {
-        "name": "差额：与同行的差量",
-        "stack": "总点击量",
-        "type": "bar",
-        "data": [322, 45]
-      }
-    ],
-    "time": ["总点击量", "总消耗"],
-    "percent": 65
-  }, {
-    "dataList": [{
-        "name": "总量:行业优质客户平均量",
-        "type": "bar",
-        "data": [50, 656]
-      },
-      {
-        "name": "数量：个人数据",
-        "stack": "总点击量",
-        "type": "bar",
-        "data": [1935]
-      },
-      {
-        "name": "差额：与同行的差量",
-        "stack": "总点击量",
-        "type": "bar",
-        "data": [675]
-      }
-    ],
-    "time": ["总展现量","总点击量"],
-    "percent": 98
-  }, {
-    "dataList": [{
-        "name": "总量:行业优质客户平均量",
-        "type": "bar",
-        "data": [323, 110]
-      },
-      {
-        "name": "数量：个人数据",
-        "stack": "总点击量",
-        "type": "bar",
-        "data": [120, 911]
-      },
-      {
-        "name": "差额：与同行的差量",
-        "stack": "总点击量",
-        "type": "bar",
-        "data": [52]
-      }
-    ],
-    "time": ["曝光关键词数", "曝光信息数"],
-    "percent": 100
-  }, {
-    "dataList": [{
-        "name": "总量:行业优质客户平均量",
-        "type": "bar",
-        "data": [5000]
-      },
-      {
-        "name": "数量：个人数据",
-        "stack": "总点击量",
-        "type": "bar",
-        "data": [3325]
-      },
-      {
-        "name": "差额：与同行的差量",
-        "stack": "总点击量",
-        "type": "bar",
-        "data": [4670]
-      }
-    ],
-    "time": ["预计错过展现量"],
-    "percent": 30
-  }, {
-    "dataList": [{
-        "name": "总量:行业优质客户平均量",
-        "type": "bar",
-        "data": [50]
-      },
-      {
-        "name": "数量：个人数据",
-        "stack": "总点击量",
-        "type": "bar",
-        "data": [1935]
-      },
-      {
-        "name": "差额：与同行的差量",
-        "stack": "总点击量",
-        "type": "bar",
-        "data": [675]
-      }
-    ],
-    "time": ["总展现量"],
-    "percent": 50
-  }]
+	"data": [{
+		"dataList": [{
+			"data": [14415, 6180],
+			"name": "总量-行业优质客户平均量",
+			"stack": "",
+			"type": "bar"
+		}, {
+			"data": [2946, 674],
+			"name": "数量-个人数据",
+			"stack": "消耗",
+			"type": "bar"
+		}, {
+			"data": [11469, 5506],
+			"name": "差额-与同行的差量",
+			"stack": "消耗",
+			"type": "bar"
+		}],
+		"percent": 11.00,
+		"time": ["总消耗", "总点击量"]
+	}, {
+		"dataList": [{
+			"data": [578962],
+			"name": "总量-行业优质客户平均量",
+			"stack": "",
+			"type": "bar"
+		}, {
+			"data": [278555],
+			"name": "数量-个人数据",
+			"stack": "展现",
+			"type": "bar"
+		}, {
+			"data": [300407],
+			"name": "差额-与同行的差量",
+			"stack": "展现",
+			"type": "bar"
+		}],
+		"percent": 48.00,
+		"time": ["总展现量"]
+	}, {
+		"dataList": [{
+			"data": [219744, 2739],
+			"name": "总量-行业优质客户平均量",
+			"stack": "",
+			"type": "bar"
+		}, {
+			"data": [77, 77],
+			"name": "数量-个人数据",
+			"stack": "曝光",
+			"type": "bar"
+		}, {
+			"data": [219667, 2662],
+			"name": "差额-与同行的差量",
+			"stack": "曝光",
+			"type": "bar"
+		}],
+		"percent": 0.00,
+		"time": ["曝光关键词数", "曝光信息数"]
+	}, {
+		"dataList": [{
+			"data": [1692, 428],
+			"name": "总量-行业优质客户平均量",
+			"stack": "",
+			"type": "bar"
+		}, {
+			"data": [53, 53],
+			"name": "数量-个人数据",
+			"stack": "点击",
+			"type": "bar"
+		}, {
+			"data": [1639, 375],
+			"name": "差额-与同行的差量",
+			"stack": "点击",
+			"type": "bar"
+		}],
+		"percent": 12.00,
+		"time": ["点击关键词数", "点击信息数"]
+	}, {
+		"dataList": [{
+			"data": [300407],
+			"name": "数量-个人数据",
+			"stack": "",
+			"type": "bar"
+		}],
+		"percent": 0,
+		"time": ["预计错过的展现量"]
+	}],
+	"errno": 0,
+	"showFive": 0
 }

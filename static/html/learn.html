@@ -6,13 +6,30 @@
     <meta name="viewport" content="width=device-width,initimum-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
 </head>
 <body>
+<script src="https://style.org.hc360.cn/js/build/source/core/jquery.min.js"></script>
 <script type="text/javascript">
-    // console.log();
-    setTimeout(function(){
-        console.log(1);
-    }, 0);
-    console.log(2);
-    console.log(3);
+    // $.getJSON('/axiosData/axios',function (result){
+    //     console.log(result)
+    // });
+
+let pro = new Promise(function (resolve, reject){
+    setTimeout(res=>{
+        resolve('index 66666');
+    },5000)
+    // resolve()
+})
+
+
+async function Fn (){
+    let index = await pro;
+    console.log(index)
+    return index;
+}
+Fn().then(function (options){
+    console.log(options);
+})
+
+
 </script>
 </body>
 </html>
