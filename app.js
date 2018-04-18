@@ -5,7 +5,7 @@ let fs = require('fs'),
 	express = require('express');
 const httpsProt = 443,
 	  httpProt = 80;
-      
+
 let app = express();
 let os = require('os'),
     iptable = {},
@@ -31,6 +31,7 @@ let httpServer = http.createServer(app);
 let httpsServer = https.createServer(sshKey, app);
 
 require('./config/config.js')(app,httpServer);
+global.dirname = __dirname;
 global.httpPath = `http://${iptable['本地连接:1']}`;
 global.httpsPath = `https://${iptable['本地连接:1']}`;
 httpServer.listen(httpProt, ()=>{console.log('\x1B[31m%s\x1B[39m', ` Server Success ${global.httpPath} `); });
