@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript" src="https://style.org.hc360.cn/js/build/source/core/jquery.min.js"></script>
+<script type="text/javascript">
+$.ajax({
+    url: 'http://wsprod.hc360.com/findProductWithAttsnew?catid=100000000&prodids=68,63,2,3',
+    // url: 'http://ydmmt.hc360.com/mobilechat/getchatlist/anfang01/?to=anfang01',
+    type:'get',
+    // data: {
+    //     catid: 100000000,
+    //     prodids: '68,63,2,3'
+    // },
+    success: function (list){
+        console.log(list);
+    }
+});
+</script>
+
+    </body>
+</html>

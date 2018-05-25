@@ -13,6 +13,9 @@ let upload = require('../routes/upload.js');
 let getweixin = require('../routes/getweixin.js');
 let axiosData = require('../routes/axiosData.js');
 let baidu_aip_sdk = require('../routes/aip_sdk.js');
+
+let decphone = require('../routes/decphone.js');
+
 let WebSocket = require('ws');
 
 let socket = require('../socket/index.js');
@@ -53,4 +56,8 @@ module.exports = function (app, server){
     require('../socket/index.js')(wss);
 	app.use('/socket', socket);
     app.use('/axiosData', axiosData);
+
+    app.use('/wechat', decphone);
+
+
 }

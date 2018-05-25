@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<input type="file" name="" value="">
+<button type="button" id="sowing_map" name="button">上传</button>
+<script type="text/javascript" src="https://style.org.hc360.com/js/build/source/core/jquery.min.js"></script>
+<script type="text/javascript" src="./webuploader.min.js"></script>
+<script type="text/javascript">
+var uploader = WebUploader.create({
+    //是否自动上传，如果为false，则在之前的html代码中需要再设置一个button来进行上传
+    auto: true,
+    // swf文件路径（根据你自己的工程目录进行设置）
+    swf: './Uploader.swf',
+    // 文件接收服务端（路由）
+    //服务器主要负责接受图片并给定唯一id，最后转存到其他目录
+    server: '//imgup.b2b.hc360.com/imgup/turbine/action/imgup.businchance.BusinChanceImgUploadFileAction/eventsubmit_doupload/doUpload',
+    pick: {
+        // 选择文件的按钮。可选
+        id: '#sowing_map',
+        // innerHTML: "点击上传logo",
+        //不允许单次上传时同时选择多个文件
+        multiple: false
+    },
+    //允许上传的文件总数量为1
+    fileNumLimit: 1,
+    // 只允许选择图片文件。
+    accept: {
+        title: 'Images',
+        extensions: 'gif,jpg,jpeg,bmp,png',
+        //此处一定要写得详细，如果使用'image/*'，chrome浏览器会出现打开资源管理器特别慢的bug！！！！！
+        mimeTypes: 'image/gif,image/jpg,image/jpeg,image/bmp,image/png'
+    }
+});
+uploader.on( 'uploadSuccess', function( file ,response ) {
+    console.log(response.error.message)
+});
+
+uploader.on("error",function (type){
+   console.log(type);
+});
+
+</script>
+
+</body>
+</html>

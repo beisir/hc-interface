@@ -25,30 +25,14 @@
 
 <script src="https://style.org.hc360.cn/js/build/source/core/jquery.min.js"></script>
 <script>
-$.ajax({
-	url: '//10.158.33.180/Getserver/getdata',
- 	type: 'GET',
-    headers: {
-        "Access-Control-Allow-Origin": window.location.origin
-    },
-	success: function (result){
-		console.log(result);
-	}
-})
-
-
-
 function fsubmit(){
 	var formdata = new FormData();
 	console.log(this.files)
-	formdata.append('num',1);
-	formdata.append('code','success');
-	formdata.append('status','y');
-	for (var i in this.files){
-		formdata.append('files',this.files[i])
-	}
+	formdata.append('operType','upload');
+	formdata.append('subjectID', 123);
+	formdata.append('file', this.files[0]);
 	$.ajax({
-		url: '//10.158.33.180/upload/imgupload',
+		url: '//imgup.b2b.hc360.com/imgup/turbine/action/imgup.PicManagementAction/eventsubmit_doPerform/ddd',
 	 	type: 'POST',
 		data: formdata,
         cache: false,
@@ -68,13 +52,75 @@ function fsubmit(){
 }
 function render(imglist){
 	console.log(imglist);
-	var eleString = ``;
-	$.each(imglist.url, function (ind,item){
-		eleString += `<li><img src="${item}" /></li>`;
-	});
-	$('#result').html(eleString)
+	// var eleString = ``;
+	// $.each(imglist.url, function (ind,item){
+	// 	eleString += `<li><img src="${item}" /></li>`;
+	// });
+	// $('#result').html(eleString)
 }
+
+
+
+
+
+
+
+
+
+
+
+// $.ajax({
+// 	url: '//imgup.b2b.hc360.com/imgup/turbine/action/imgup.AlbumHandupAction/eventsubmit_dohandup/doHandup',
+//  	type: 'GET',
+//     headers: {
+//         "Access-Control-Allow-Origin": window.location.origin
+//     },
+// 	success: function (result){
+// 		console.log(result);
+// 	}
+// })
+//
+//
+//
+// function fsubmit(){
+// 	var formdata = new FormData();
+// 	console.log(this.files)
+// 	formdata.append('num',1);
+// 	formdata.append('code','success');
+// 	formdata.append('status','y');
+// 	for (var i in this.files){
+// 		formdata.append('files',this.files[i])
+// 	}
+// 	$.ajax({
+// 		url: '//10.158.33.180/upload/imgupload',
+// 	 	type: 'POST',
+// 		data: formdata,
+//         cache: false,
+//         processData: false,  // formdata 必须有这两参数
+//         contentType: false,	 // formdata 必须有这两参数
+// 		success: function (result){
+// 			render(result);
+// 		}/*,
+// 		complete : function(XMLHttpRequest,status){ //请求完成后最终执行参数
+// 			console.log(XMLHttpRequest,status)
+// 			// if(status=='timeout'){//超时,status还有success,error等值的情况
+// 			// 	ajaxTimeoutTest.abort();
+// 			// 	alert("超时");
+// 			// }
+// 		}	*/
+// 	})
+// }
+// function render(imglist){
+// 	console.log(imglist);
+// 	var eleString = ``;
+// 	$.each(imglist.url, function (ind,item){
+// 		eleString += `<li><img src="${item}" /></li>`;
+// 	});
+// 	$('#result').html(eleString)
+// }
 // console.log('http://10.158.33.180:3377/static/html/index.html'.exec(reg))
+//
+//
 </script>
 </body>
 </html>
