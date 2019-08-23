@@ -36,11 +36,10 @@ function sendImgs(fileData, ims){
 			imgExt = path.extname(fileData.originalname), // 获取上传文件后缀名;
 		    newPath = imgPath + imgExt,
 		    imgName = fileData.filename + imgExt,
-		    watermark = '../static/img/hcLogo.jpg';
 			imgName = 'static/img/'+ imgName;
 		fs.rename(imgPath,newPath,function (err,result){
 			var openid = pageId.createUUID(),
-				newUrl = protocol !== 'https://' ? `${global.httpPath}/${imgName}`: `${global.httpsPath}/${imgName}`;
+				newUrl = `/${imgName}`;
 			if(!err){
 				con.query('insert into imgsql(openid,src,title) values(?,?,?)', [openid , newUrl, fileData.originalname], function (orr,data){
 				    !err && (!ims ? resolve(newUrl): resolve(imgName));

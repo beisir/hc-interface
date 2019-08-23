@@ -4,12 +4,19 @@ router.get('/getdata', (req,res)=>{
     res.cookie('index','indexdbdbdb');
 	con.query(`select * from imgsql order by id desc`,[], (err,data)=>{
         setTimeout(opt => {
-            !err && res.json({
-    			code:0,
-    			msg:'success',
-    			datalist:data
-    		});
-        },5000)
+			var sendParams = {
+				code:0,
+				msg:'success',
+				datalist:data
+			};
+			if (!err) {
+				if (req.query.callback) {
+					res.send(`${req.query.callback}(${JSON.stringify(sendParams)})`);
+				} else {
+					res.json(sendParams);
+				}
+			}
+        },1000)
 
 
 		// console.log(data);

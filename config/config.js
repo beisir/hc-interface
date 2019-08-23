@@ -1,16 +1,12 @@
 let express = require('express');
-let ejs = require('ejs');
 let cookieParser = require('cookie-parser');
 let multer = require('multer');
-let cluster = require('cluster');
 let bodyParser = require('body-parser');
-let fs = require('fs');
 let Getjson = require('../routes/Getjson.js');
 let Getjsonp = require('../routes/Getjsonp.js');
 let getdata = require('../routes/getdata.js');
 let postdata = require('../routes/postdata.js');
 let upload = require('../routes/upload.js');
-let getweixin = require('../routes/getweixin.js');
 let axiosData = require('../routes/axiosData.js');
 let baidu_aip_sdk = require('../routes/aip_sdk.js');
 
@@ -45,7 +41,6 @@ module.exports = function (app, server){
 	});
 
     app.use('/Getserver', getdata);
-	app.use('/Weixinserver', getweixin);
 	app.use('/Postserver', postdata);
     app.use('/json', Getjson);
 	app.use('/jsonp', Getjsonp);
