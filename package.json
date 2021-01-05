@@ -10,7 +10,7 @@
   "license": "ISC",
   "keywords": "hickey_bei",
   "devDependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "baidu-aip-sdk": "^2.2.0",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
